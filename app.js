@@ -40,17 +40,17 @@ function check(index) {
   }
   else {
     h3.innerHTML = `GAME OVER! Your Score was <b>${level}</b><br>Press any key to start the game`;
-    let highest = level;
-    let head = document.querySelector(".head");
-    let h2 = document.createElement("h2");
-    head.insertBefore(h2,h3);
+    // let highest = level;
+    // let head = document.querySelector(".head");
+    // let h2 = document.createElement("h2");
+    // head.insertBefore(h2,h3);
 
-    if(highest < currlevel){
-      h2.innerHTML = `Highest Score ${currlevel}`;
-    }
-    else{
-      h2.innerHTML = `Highest Score ${highest}`;
-    }
+    // if(highest < currlevel){
+    //   h2.innerHTML = `Highest Score ${currlevel}`;
+    // }
+    // else{
+    //   h2.innerHTML = `Highest Score ${highest}`;
+    // }
     
     document.querySelector("body").style.backgroundColor = "#F7374F";
     setTimeout(function(){
