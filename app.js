@@ -22,7 +22,7 @@ document.addEventListener("keypress", function () {
 function levelUp() {
   userSeq = [];
   level++;
-  let currlevel = level; 
+  let currlevel = level;
   h3.innerText = `Level ${level}`;
   let random = Math.floor(Math.random() * 3);
   let randclr = btns[random];
@@ -31,6 +31,9 @@ function levelUp() {
   console.log(gameSeq);
   btnFlash(btn);
 }
+let head = document.querySelector(".head");
+let h2 = document.createElement("h2");
+head.insertBefore(h2, h3);
 
 function check(index) {
   if (userSeq[index] === gameSeq[index]) {
@@ -40,22 +43,18 @@ function check(index) {
   }
   else {
     h3.innerHTML = `GAME OVER! Your Score was <b>${level}</b><br>Press any key to start the game`;
-    // let highest = level;
-    // let head = document.querySelector(".head");
-    // let h2 = document.createElement("h2");
-    // head.insertBefore(h2,h3);
+    let highest = level;
+    if (highest < level) {
+      h2.innerHTML = `Highest Score ${level}`;
+    }
+    else {
+      h2.innerHTML = `Highest Score ${highest}`;
+    }
 
-    // if(highest < currlevel){
-    //   h2.innerHTML = `Highest Score ${currlevel}`;
-    // }
-    // else{
-    //   h2.innerHTML = `Highest Score ${highest}`;
-    // }
-    
     document.querySelector("body").style.backgroundColor = "#F7374F";
-    setTimeout(function(){
+    setTimeout(function () {
       document.querySelector("body").style.backgroundColor = "bisque";
-    },150);
+    }, 150);
     reset();
   }
 }
