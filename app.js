@@ -9,6 +9,7 @@ let level = 0;
 let currlevel = 0;
 
 let h3 = document.querySelector("h3");
+let highest = 0;
 
 document.addEventListener("keypress", function () {
   if (started == false) {
@@ -42,14 +43,11 @@ function check(index) {
     }
   }
   else {
+    if (level > highest) {
+      highest = level;
+    }
     h3.innerHTML = `GAME OVER! Your Score was <b>${level}</b><br>Press any key to start the game`;
-    let highest = level;
-    if (highest < level) {
-      h2.innerHTML = `Highest Score ${level}`;
-    }
-    else {
-      h2.innerHTML = `Highest Score ${highest}`;
-    }
+    h2.innerHTML = `Highest Score ${highest}`;
 
     document.querySelector("body").style.backgroundColor = "#F7374F";
     setTimeout(function () {
